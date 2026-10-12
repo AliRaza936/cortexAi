@@ -1,0 +1,49 @@
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Build output
+dist/
+build/
+.next/
+coverage/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+.idea/
+
+# Private SSH keys
+*.pem
+id_rsa
+id_ed25519
+
+# Google Cloud service account credentials
+backend/services/auth/serviceAccountKey.json
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+serviceAccountKey.json
+firebase-debug.log
+firebase-adminsdk*.json
+.dockerignore
+.cache/
+tmp/
+.pem
