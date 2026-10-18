@@ -22,7 +22,7 @@ app.use('/',router)
  })
 
 app.get('/',async(req,res)=>{
-    res.json({message:"hello from agent service."})
+    res.json({message:"hello from agent service v4."})
 })
 app.listen(port,()=>{
     console.log("agent started at",port)

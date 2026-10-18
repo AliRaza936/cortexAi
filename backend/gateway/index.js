@@ -26,7 +26,7 @@ app.use('/api/agent',protect,proxyWithHeader(process.env.AGENT_SERVICE))
 app.get('/api/me', protect,getCurrentUser)
 
 app.get('/',async(req,res)=>{
-    res.json({message:"hello from gateway."})
+    res.json({message:"hello from gateway v4."})
 })
 app.listen(port,()=>{
     console.log("Gateway started at",port)

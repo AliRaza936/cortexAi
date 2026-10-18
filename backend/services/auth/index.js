@@ -9,7 +9,7 @@ const port = process.env.PORT
 app.use(express.json())
 app.use('/',router)
 app.get('/',async(req,res)=>{
-    res.json({message:"hello from auth service."})
+    res.json({message:"hello from auth service v4."})
 })
 app.listen(port,()=>{
     console.log("Auth started at",port)

@@ -11,7 +11,7 @@ app.use(express.json())
 
 app.use('/',router)
 app.get('/',async(req,res)=>{
-    res.json({message:"hello from chat service."})
+    res.json({message:"hello from chat service v4."})
 })
 app.listen(port,()=>{
     console.log("Chat started at",port)
