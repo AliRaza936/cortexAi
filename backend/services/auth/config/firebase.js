@@ -1,5 +1,9 @@
 
-import admin from "firebase-admin";
+import {
+  initializeApp,
+  getApps,
+  cert,
+} from "firebase-admin/app";
 
 const credentials = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
 
@@ -10,8 +14,8 @@ if (!credentials) {
 const serviceAccount = JSON.parse(credentials);
 
 export const app =
-  admin.apps.length > 0
-    ? admin.app()
-    : admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount),
+  getApps().length > 0
+    ? getApps()[0]
+    : initializeApp({
+        credential: cert(serviceAccount),
       });
