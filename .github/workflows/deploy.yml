@@ -142,7 +142,6 @@ jobs:
           VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
           VITE_SERVER_URL: ${{ secrets.VITE_SERVER_URL }}
         run: |
-          cd ci
           npm install
           npm run build
         
