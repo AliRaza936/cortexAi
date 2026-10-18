@@ -39,7 +39,7 @@ jobs:
         - name: Push Gateway
           run:  |
             docker push \
-            $AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/gateway:latest
+            $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/gateway:latest
 
 
 
@@ -58,7 +58,7 @@ jobs:
         - name: Push Auth
           run:  |
             docker push \
-            $AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/auth-service:latest
+            $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/auth-service:latest
 
 
 
@@ -76,7 +76,7 @@ jobs:
         - name: Push Chat
           run:  |
             docker push \
-            $AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/chat-service:latest
+            $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/chat-service:latest
 
 
 
@@ -95,7 +95,7 @@ jobs:
         - name: Push Agent
           run:  |
             docker push \
-            $AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/agent-service:latest
+            $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/agent-service:latest
 
 
 
