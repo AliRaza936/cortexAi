@@ -20,6 +20,22 @@ const port = process.env.PORT
 app.use(cookieParser())
 app.use('/api/auth',proxy(process.env.AUTH_SERVICE))
 app.use('/api/chat',protect,proxyWithHeader(process.env.CHAT_SERVICE))
+
+app.use("/api/agent", (req, res, next) => {
+  const start = Date.now();
+
+  console.log(`[Gateway] Started: ${req.method} ${req.originalUrl}`);
+
+  res.on("finish", () => {
+    console.log(
+      `[Gateway] Finished: ${req.method} ${req.originalUrl}`,
+      `status=${res.statusCode}`,
+      `duration=${Date.now() - start}ms`
+    );
+  });
+
+  next();
+});
 app.use('/api/agent',protect,proxyWithHeader(process.env.AGENT_SERVICE))
 
     
