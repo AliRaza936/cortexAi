@@ -10,6 +10,24 @@ connectDB()
 const port = process.env.PORT
 app.use(express.json())
 
+app.use((req, res, next) => {
+  const start = Date.now();
+
+  console.log(
+    `[Agent HTTP] Started: ${req.method} ${req.originalUrl}`
+  );
+
+  res.on("finish", () => {
+    console.log(
+      `[Agent HTTP] Finished: ${req.method} ${req.originalUrl}`,
+      `status=${res.statusCode}`,
+      `duration=${Date.now() - start}ms`
+    );
+  });
+
+  next();
+});
+
 app.use('/',router)
 
  app.use((err,req,res,next)=>{
