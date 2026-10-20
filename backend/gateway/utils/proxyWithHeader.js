@@ -12,6 +12,15 @@ export const proxyWithHeader = (serviceUrl) => {
       return proxyReqOpts;
     },
 
+    userResDecorator: (proxyRes, proxyResData) => {
+      console.log("[Gateway Upstream Response]", {
+        serviceUrl,
+        status: proxyRes.statusCode,
+      });
+
+      return proxyResData;
+    },
+
     proxyErrorHandler: (err, res, next) => {
       console.error("[Gateway Proxy Error]", {
         message: err.message,
